@@ -1,0 +1,5 @@
+# Optional dependency for visual parse tree generation
+# Install with: pip install graphviz
+# Note: Also requires Graphviz system package to be installed
+graphviz>=0.20.0
+
