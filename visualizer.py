@@ -132,11 +132,13 @@ class ParseTreeVisualizer:
         # Create node label
         label = node.node_type.replace('"', '\\"')
         if node.value:
-            label += f"\\n{node.value.replace('"', '\\"')}"
+            escaped_value = node.value.replace('"', '\\"')
+            label += f"\\n{escaped_value}"
         if node.data_type:
             label += f"\\n[type: {node.data_type}]"
         if node.symbol_ref:
-            label += f"\\n[ref: {node.symbol_ref.replace('"', '\\"')}]"
+            escaped_ref = node.symbol_ref.replace('"', '\\"')
+            label += f"\\n[ref: {escaped_ref}]"
         
         # Create unique node ID
         node_id = f"node_{self.node_counter}"
