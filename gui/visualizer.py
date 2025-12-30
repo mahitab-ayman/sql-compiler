@@ -3,7 +3,7 @@ Visual Parse Tree Generator
 Creates visual representations of parse trees using graphviz or ASCII art
 """
 
-from parser import ParseTreeNode
+from compiler.parser import ParseTreeNode
 import os
 
 

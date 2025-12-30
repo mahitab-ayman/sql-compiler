@@ -27,3 +27,4 @@ INSERT INTO Test VALUES (1, 'Unclosed string
 -- Unclosed comment
 ## This comment is not closed
 
+

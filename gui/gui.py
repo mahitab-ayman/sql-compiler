@@ -7,11 +7,11 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, filedialog, messagebox
 import os
 import sys
-from lexer import LexicalAnalyzer
-from parser import SyntaxAnalyzer
-from semantic_analyzer import SemanticAnalyzer
-from visualizer import ParseTreeVisualizer
-from tree_visualizer import TreeVisualizerWindow
+from compiler.lexer import LexicalAnalyzer
+from compiler.parser import SyntaxAnalyzer
+from compiler.semantic_analyzer import SemanticAnalyzer
+from gui.visualizer import ParseTreeVisualizer
+from gui.tree_visualizer import TreeVisualizerWindow
 
 
 class CompilerGUI:
