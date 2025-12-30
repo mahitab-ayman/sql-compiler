@@ -1,6 +1,5 @@
 """
 GUI Application for SQL-like Compiler
-ENHANCED: Graphical Parse Tree Visualization
 """
 
 import tkinter as tk

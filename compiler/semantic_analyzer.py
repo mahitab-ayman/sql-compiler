@@ -1,9 +1,5 @@
 """
 Semantic Analyzer for SQL Compiler
-
-✅ FIXED: Table existence check BEFORE column/WHERE analysis
-✅ FIXED: No repeated column errors for non-existent tables
-✅ FIXED: Proper error flow control
 """
 class SymbolTable:
     """Manages tables and their column information"""

@@ -1,8 +1,5 @@
 """
 Phase 02: Syntax Analyzer for SQL-like Language
-
-✅ FIXED: Multi-table FROM clause support (FROM a, b)
-✅ FIXED: SELECT id FROM a, b; now works correctly
 """
 from compiler.lexer import Token, LexicalAnalyzer
 
