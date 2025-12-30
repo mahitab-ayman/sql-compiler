@@ -233,14 +233,14 @@ class SemanticAnalyzer:
         if not hasattr(node, 'children'):
             return
         
-        # ✅ FIXED: Extract table name FIRST
+        # Extract table name FIRST
         for child in node.children:
             if child.node_type == "IDENTIFIER" and table_name is None:
                 table_name = child.value
         
         line, col = self._safe_get_line_column(node)
         
-        # ✅ FIXED: Table existence check FIRST - STOP if table doesn't exist
+        # Table existence check FIRST - STOP if table doesn't exist
         if table_name and not self.symbol_table.table_exists(table_name):
             self.add_error(f"Table '{table_name}' does not exist", line, col)
             # Add children anyway for tree visualization
@@ -300,7 +300,7 @@ class SemanticAnalyzer:
         if not hasattr(node, 'children'):
             return
         
-        # ✅ FIXED: Extract ALL table names FIRST
+        # Extract ALL table names FIRST
         for child in node.children:
             if child.node_type == "TABLE_LIST":
                 table_names = self._extract_table_names(child)
@@ -308,7 +308,7 @@ class SemanticAnalyzer:
         
         line, col = self._safe_get_line_column(node)
         
-        # ✅ FIXED: Check ALL tables exist FIRST
+        # Check ALL tables exist FIRST
         for table_name in table_names:
             if not self.symbol_table.table_exists(table_name):
                 self.add_error(f"Table '{table_name}' does not exist", line, col)
@@ -409,14 +409,14 @@ class SemanticAnalyzer:
         if not hasattr(node, 'children'):
             return
         
-        # ✅ FIXED: Extract table name FIRST
+        # Extract table name FIRST
         for child in node.children:
             if child.node_type == "IDENTIFIER" and table_name is None:
                 table_name = child.value
         
         line, col = self._safe_get_line_column(node)
         
-        # ✅ FIXED: Table existence FIRST
+        # Table existence FIRST
         if table_name and not self.symbol_table.table_exists(table_name):
             self.add_error(f"Table '{table_name}' does not exist", line, col)
             for child in node.children:
@@ -435,14 +435,14 @@ class SemanticAnalyzer:
         if not hasattr(node, 'children'):
             return
         
-        # ✅ FIXED: Extract table name FIRST
+        # Extract table name FIRST
         for child in node.children:
             if child.node_type == "IDENTIFIER" and table_name is None:
                 table_name = child.value
         
         line, col = self._safe_get_line_column(node)
         
-        # ✅ FIXED: Table existence FIRST - CRITICAL FIX
+        # Table existence FIRST - CRITICAL FIX
         if table_name and not self.symbol_table.table_exists(table_name):
             self.add_error(f"Table '{table_name}' does not exist", line, col)
             # Still build tree but SKIP column/WHERE analysis

@@ -369,7 +369,7 @@ class SyntaxAnalyzer:
         return node
 
     def parse_select(self):
-        """Parse SELECT statement - ✅ FIXED: Now supports FROM table1, table2"""
+        """Parse SELECT statement - supports FROM table1, table2"""
         node = ParseTreeNode('SELECT')
         # SELECT
         select_token = self.consume('KEYWORD', 'SELECT')
